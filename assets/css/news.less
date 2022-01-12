@@ -1,0 +1,173 @@
+// trends
+.trends{
+	width: 80%;
+	margin: auto;
+	padding: 1.5em;
+	.top{
+		margin-bottom: 1.5em;
+		h2{
+			font-size: 2em;
+			font-weight: 550;
+			color: #ff6b08;
+		}
+	}
+	.bottom{
+		width: 100%;
+		overflow-x: scroll;
+		margin-bottom: 2em;
+		&::-webkit-scrollbar{
+			display: none;
+		}
+		ul{
+			display: flex;
+			list-style: none;
+			animation: g linear 5s infinite;
+			&:hover{
+				animation-play-state: paused;
+			}
+		}
+		.trendsbox{
+			position: relative;
+			width: 36%;
+			flex-shrink: 0;
+			margin-right: 4%;
+			a,img{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			.contener{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2em;
+				background-color: rgba(0,0,0,.6);
+				text-align: center;
+				p{
+					width: 90%;
+					line-height: 2em;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					color: white;
+					margin: auto;
+				}
+			}
+		}
+		@media screen and (max-width:600px){
+			.trendsbox{
+				width: 100%;
+			}
+			ul{
+				animation: gd 10s linear infinite;
+			}
+			
+		}
+		@keyframes g{
+			form{
+				transform: translateX(0);
+			}
+			to{
+				transform: translateX(-40%);
+			}
+		}
+		@keyframes gd{
+			form{transform: translateX(0);}
+			to{
+				transform: translateX(-312%);
+			}
+		}
+	}
+}
+// newconter
+.newconter{
+	width: 80%;
+	margin: 0 auto;
+	border-bottom: 1px dashed  #d4d4d4;
+	.newbox{
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		margin-bottom: 2em;
+		justify-content: space-between;
+	}
+	.left{
+		width: 27%;
+		padding: 2px;
+		border-radius: 5px;
+		border: 2px solid #dddddd;
+		a,img{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.right{
+		width: 70%;
+		a{
+			font-size: 1.2em;
+			color: #ff6b08;
+		}
+		span,p{
+			font-size: .5em;
+		}
+		span{
+			display: block;
+			margin-bottom: .5em;
+		}
+		p{
+			margin-bottom: 2.5em;
+		}
+		.button{
+			text-align: right;
+			label{
+				width: 7em;
+				height: 2em;
+				border-radius: 1em;
+				border: 1px solid #ff6900;
+				color: #ff6900;
+				line-height: 2em;
+				text-align: center;
+			}
+			input{
+				display: none;
+				&:checked+label{
+					background-color: #ff6900;
+					color: white;
+				}
+			}
+		}
+	}
+	@media screen and (max-width:660px){
+		.newbox{
+			.left{
+				width: 100%;
+			}
+			.right{
+				width: 100%;
+				margin-top: 1.5em;
+				.button{
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+// paging
+.paging{
+	text-align: center;
+	padding: 1.25em 0 .5em;
+	label{
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		margin-bottom: 0;
+	}
+	input{
+		display: none;
+		&:checked+a{
+			background-color: #e34637 !important;
+		}
+	}
+}

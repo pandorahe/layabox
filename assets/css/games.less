@@ -1,0 +1,188 @@
+.banar{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	ul{
+		width: 200vw;
+		input{
+			display: none;
+			&:checked+li{
+				display: none;
+			}
+			&[id='rotation1']:checked~.desc label:nth-child(1),&[id='rotation2']:checked~.desc label:nth-child(2){
+				background-color: #24160e;
+			}
+		}
+		li{
+			width: 100vw;
+			float: left;
+			img{
+				width: 100vw;
+			}
+		}
+	}
+	.desc{
+		position: absolute;
+		width: 100%;
+		bottom: .5em;
+		left: 0;
+		text-align: center;
+		label{
+			display: inline-block;
+			width: .75em;
+			height: .75em;
+			margin: 0 .15em;
+			border-radius: 50%;
+			background-color: white;
+			border: 2px solid white;
+		}
+	}
+}
+// gamecontenr
+.gamecontenr{
+	position: relative;
+	width: 100%;
+	padding-top: 2.5em;
+	.icon{
+		position: absolute;
+		left: 10%;
+		top: 0;
+		width: 2em;
+	}
+	.media{
+		width: 80%;
+		margin: 0 auto 2em;
+		font-weight: 550;
+		.media-left{
+			width: 34%;
+			a,img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.media-left+.media-body{
+			text-align: right;
+		}
+		h4{
+			font-weight: 550;
+		}
+		p{
+			font-size: .5em;
+			color: #989898;
+			margin-bottom: 2em;
+		}
+		.media-body{
+			width: 66%;
+			.gameid{
+				display: flex;
+				width: 100%;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				.gamebox{
+					width: 48%;
+					margin-bottom: 1.5em;
+					a,img{
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width:915px){
+		.icon{
+			width: 1.5em;
+		}
+		.media{
+			.media-left{
+				display: none;
+			}
+			.media-body{
+				width: 100%;
+			}
+		}
+	}
+}
+// case
+.case{
+	width: 100%;
+	margin-bottom: 2em;
+	.title{
+		width: 80%;
+		margin: 0 auto 1.5em;
+		h1{
+			color: black;
+			font-weight: 550;
+		}
+	}
+	.casecontenr{
+		display: flex;
+		width: 80%;
+		margin: 0 auto;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.casebox{
+			position: relative;
+			width: 32%;
+			font-size: .75em;
+			text-align: center;
+			margin-bottom: 2.5em;
+			overflow: hidden;
+			&:hover .describe{
+				opacity: 1;
+				top: 0;
+				transition: all .3s linear;
+			}
+			a{
+				display: inline-block;
+				width: 100%;
+				height: 75%;
+				color: #2a2a2a;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+				p{
+					margin-top: 1.5em;
+				}
+			}
+			.describe{
+				position: absolute;
+				opacity: 0;
+				top: 77%;
+				left: 0;
+				width: 100%;
+				height: 75%;
+				background-color: rgba(0,0,0,.3);
+				font-size: 1em;
+				color: white;
+				padding: 1.5em 0 ;
+				p{
+					width: 90%;
+					margin: 0 auto;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 4;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+			@media screen and (max-width:900px){
+				.describe{
+					padding-top: .5em;
+				}
+			}
+		}
+		@media screen and (max-width:600px){
+			.casebox{
+				width: 48%;
+				margin-bottom: 1.5em;
+				a p{
+					margin-top: .5em;
+				}
+				.describe p{
+					-webkit-line-clamp: 3;
+				}
+			}
+		}
+	}
+}
